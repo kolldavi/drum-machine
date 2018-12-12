@@ -1,11 +1,21 @@
 import React from 'react';
-
-const DrumPad = ({ key, soundName, soundSource }) => {
+/*
+	keyCode: 68,
+    keyTrigger: 'D',
+	id: 'Closed-HH',
+	url
+*/
+const DrumPad = ({ props, onClick }) => {
+	const { keyCode, keyTrigger, id, url } = props;
+	//	console.log(props);
 	return (
-		<div>
-			<p>hello</p>
-		</div>
+		<button className="drum-pad" onClick={onClick}>
+			<audio id={id}>
+				<source src={url} type="audio/mp3" />
+			</audio>
+			{keyTrigger}
+		</button>
 	);
 };
 
-export default DrumpPad;
+export default DrumPad;
