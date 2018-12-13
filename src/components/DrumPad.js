@@ -9,11 +9,7 @@ const DrumPad = ({ props, onClick }) => {
 	const { keyCode, keyTrigger, id, url } = props;
 
 	return (
-		<div
-			className="drum-pad"
-			onClick={onClick}
-			style={{ backgroundColor: 'grey', marginTop: '10px', boxShadow: 'black 3px 3px 5px' }}
-		>
+		<div className="drum-item" onClick={onClick} id={`btn-${keyCode}`}>
 			<audio id={id}>
 				<source src={url} type="audio/mp3" />
 			</audio>
