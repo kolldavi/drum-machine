@@ -11,7 +11,6 @@ function playSound(id) {
 class DrumpMachine extends React.Component {
 	state = {
 		drumButtons: getData(),
-		power: true,
 		currentSound: null
 	};
 	handleClick = item => {

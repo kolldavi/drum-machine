@@ -7,7 +7,7 @@ import React from 'react';
 */
 const DrumPad = ({ props, onClick }) => {
 	const { keyCode, keyTrigger, id, url } = props;
-	//	console.log(props);
+
 	return (
 		<button className="drum-pad" onClick={onClick}>
 			<audio id={id}>
