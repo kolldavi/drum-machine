@@ -13,12 +13,28 @@ class DrumpMachine extends React.Component {
 		drumButtons: getData(),
 		currentSound: null
 	};
+
 	handleClick = item => {
 		playSound(item);
 	};
 
+	listen = () => {
+		const data = this.state.drumButtons[0];
+		const keyCodes = data.map(item => item.keyCode);
+		window.addEventListener('keyup', event => {
+			if (keyCodes.includes(event.keyCode)) {
+				const i = data.filter(item => item.keyCode === event.keyCode)[0].id;
+				playSound(i);
+			}
+		});
+	};
+	componentDidMount() {
+		this.listen(this.state.drumButtons[0]);
+	}
+
 	render() {
 		const drumButtons = this.state.drumButtons[0];
+
 		return (
 			<div>
 				{drumButtons.map(item => {

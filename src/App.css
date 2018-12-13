@@ -1,12 +1,12 @@
 html {
-  box-sizing: border-box;
-  font-size: 16px;
+	box-sizing: border-box;
+	font-size: 16px;
 }
 
 *,
 *:before,
 *:after {
-  box-sizing: inherit;
+	box-sizing: inherit;
 }
 
 body,
@@ -19,65 +19,30 @@ h6,
 p,
 ol,
 ul {
-  margin: 0;
-  padding: 0;
-  font-weight: normal;
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
 }
 
 ol,
 ul {
-  list-style: none;
+	list-style: none;
 }
 
 img {
-  max-width: 100%;
-  height: auto;
+	max-width: 100%;
+	height: auto;
 }
 
 #drum-machine {
-  width: 80vw;
-  margin-left: 10vw;
-  margin-top: 5vw;
-  background-color: red;
-  display: flex;
-  flex-direction: column;
+	width: 80vw;
+	margin-left: 10vw;
+	margin-top: 5vw;
+	background-color: red;
+	display: flex;
+	flex-direction: column;
 }
 
 .container-logo {
-  align-self: flex-end;
-
-}
-
-#onOff {
-  margin-left: 70px;
-  width: 100px;
-  height: 30px;
-
-}
-
-#off {
-  float: left;
-  margin-right: 10px;
-}
-
-#on {
-  float: right;
-  margin-left: 10px;
-}
-
-a.toggler {
-  background: green;
-  cursor: pointer;
-  border: 2px solid black;
-  padding: 0 5px;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: all .2s ease;
-  border-left-width: 25px;
-}
-
-.f {
-  border-right-width: 25px !important;
-  border-left-width: 0 !important;
-  background: red;
+	align-self: flex-end;
 }
