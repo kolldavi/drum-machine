@@ -13,7 +13,7 @@ function animate(drumItemId) {
 	item.classList.add('active');
 	setTimeout(function() {
 		item.classList.remove('active');
-	}, 200);
+	}, 100);
 }
 class DrumpMachine extends React.Component {
 	state = {
