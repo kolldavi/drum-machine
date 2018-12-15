@@ -70,11 +70,15 @@ img {
 
 .power {
 	grid-area: power;
+	display: flex;
+	justify-content: center;
 }
 
 .container-logo {
 	grid-area: logo;
-	background-color: blue;
+	display: flex;
+	justify-content: flex-end;
+	font-size: 1.2em;
 
 }
 
