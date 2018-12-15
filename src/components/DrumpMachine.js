@@ -13,7 +13,7 @@ function animate(drumItemId) {
 	item.classList.add('active');
 	setTimeout(function() {
 		item.classList.remove('active');
-	}, 100);
+	}, 200);
 }
 class DrumpMachine extends React.Component {
 	state = {
@@ -22,9 +22,8 @@ class DrumpMachine extends React.Component {
 
 	handleClick = item => {
 		if (!this.props.power) return;
-
-		playSound(item.id);
 		animate(item.keyCode);
+		playSound(item.id);
 	};
 
 	listen = () => {

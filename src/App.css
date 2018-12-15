@@ -56,13 +56,13 @@ img {
 	grid-area: drummachine;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	grid-gap: 7px;
+	grid-gap: 10px;
 }
 
 .drum-item {
-	background-color: gray;
-	border: 1px solid red;
-	border-radius: 5px;
+	background-color: rgb(180, 175, 175);
+	box-shadow: 3px 2px 1px 1px rgb(65, 64, 64);
+	border-radius: 2px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -75,8 +75,12 @@ img {
 .container-logo {
 	grid-area: logo;
 	background-color: blue;
+
 }
 
 .active {
+	transition: all .1s ease-in-out;
 	background-color: orange !important;
+	transform: scale(1.07);
+
 }
