@@ -7,7 +7,8 @@ import './App.css';
 
 class App extends Component {
 	state = {
-		power: true
+		power: true,
+		soundTrack: false
 	};
 	render() {
 		const borderRadiusStyle = { borderRadius: 5, fontSize: '2.5em' };
@@ -21,6 +22,16 @@ class App extends Component {
 					<ToggleButton
 						style={{ gridArea: 'power' }}
 						value={this.state.power}
+						thumbStyle={borderRadiusStyle}
+						trackStyle={borderRadiusStyle}
+						onToggle={() => {
+							this.setState({
+								power: !this.state.power
+							});
+						}}
+					/>
+					<ToggleButton
+						value={this.state.soundTrack}
 						thumbStyle={borderRadiusStyle}
 						trackStyle={borderRadiusStyle}
 						onToggle={() => {
