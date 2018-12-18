@@ -48,7 +48,7 @@ img {
 		"drummachine drummachine drummachine  volume"
 		"drummachine drummachine drummachine  volume"
 		"drummachine drummachine drummachine  volume"
-		"drummachine drummachine drummachine  volume";
+		"drummachine drummachine drummachine  toggle-song";
 
 }
 
@@ -57,6 +57,23 @@ img {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-gap: 10px;
+}
+
+.toggle-song {
+	grid-area: toggle-song;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.power-header {
+	margin: 15px;
+}
+
+.toggl-song-header {
+	margin: 15px;
 }
 
 .drum-item {
@@ -71,7 +88,9 @@ img {
 .power {
 	grid-area: power;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
+	align-items: center;
 }
 
 .container-logo {

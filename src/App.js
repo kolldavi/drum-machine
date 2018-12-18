@@ -19,6 +19,7 @@ class App extends Component {
 				<Logo />
 				<DrumpMachine power={power} soundTrack={soundTrack} />
 				<div className="power">
+					<h5 className="power-header">Power</h5>
 					<ToggleButton
 						style={{ gridArea: 'power' }}
 						value={this.state.power}
@@ -30,6 +31,9 @@ class App extends Component {
 							});
 						}}
 					/>
+				</div>
+				<div className="toggle-song">
+					<h5 className="toggl-song-header">Change Beat</h5>
 					<ToggleButton
 						inactiveLabel={<LableText textLable="1" />}
 						activeLabel={<LableText textLable="2" />}
