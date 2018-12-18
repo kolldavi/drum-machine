@@ -1,5 +1,5 @@
 import React from 'react';
-import { getData } from '../utils/api';
+
 import DrumPad from './DrumPad';
 
 function playSound(id) {
@@ -17,10 +17,6 @@ function animate(drumItemId) {
 	}, 200);
 }
 class DrumpMachine extends React.Component {
-	state = {
-		drumButtons: getData()
-	};
-
 	handleClick = item => {
 		if (!this.props.power) return;
 		animate(item.keyCode);
@@ -28,13 +24,11 @@ class DrumpMachine extends React.Component {
 	};
 
 	listen = () => {
-		const keyCodes = this.state.drumButtons[0].map(item => item.keyCode);
+		const keyCodes = this.props.drumButtons.map(item => item.keyCode);
 		window.addEventListener('keyup', event => {
 			if (!this.props.power) return;
 			if (keyCodes.includes(event.keyCode)) {
-				const videoId = this.state.drumButtons[this.props.soundTrack ? 0 : 1].filter(
-					item => item.keyCode === event.keyCode
-				)[0].id;
+				const videoId = this.props.drumButtons.filter(item => item.keyCode === event.keyCode)[0].id;
 
 				animate(event.keyCode);
 				playSound(videoId);
@@ -43,12 +37,11 @@ class DrumpMachine extends React.Component {
 	};
 
 	componentDidMount() {
-		this.setState({ power: this.props.power });
-		this.listen(this.state.drumButtons);
+		this.listen(this.props.drumButtons);
 	}
 
 	render() {
-		const drumButtons = this.state.drumButtons[this.props.soundTrack ? 0 : 1];
+		const drumButtons = this.props.drumButtons;
 
 		return (
 			<div className="drum-machine">

@@ -3,12 +3,14 @@ import Logo from './components/Logo.js';
 import DrumpMachine from './components/DrumpMachine';
 import ToggleButton from 'react-toggle-button';
 import LableText from './components/LableText';
+import { getData } from './utils/api';
 import './App.css';
 
 class App extends Component {
 	state = {
 		power: true,
-		soundTrack: false
+		soundTrack: false,
+		data: getData()
 	};
 	render() {
 		const borderRadiusStyle = { borderRadius: 5, fontSize: '2.5em' };
@@ -17,7 +19,7 @@ class App extends Component {
 		return (
 			<div className="inner-container" id="drum-machine">
 				<Logo />
-				<DrumpMachine power={power} soundTrack={soundTrack} />
+				<DrumpMachine power={power} soundTrack={soundTrack} drumButtons={this.state.data[soundTrack ? 0 : 1]} />
 				<div className="power">
 					<h5 className="power-header">Power</h5>
 					<ToggleButton
