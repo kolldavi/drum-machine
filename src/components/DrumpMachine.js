@@ -3,9 +3,10 @@ import { getData } from '../utils/api';
 import DrumPad from './DrumPad';
 
 function playSound(id) {
-	const ele = document.getElementById(id);
-	ele.currentTime = 0;
-	ele.play();
+	const sound = document.getElementById(id);
+	sound.load();
+	sound.currentTime = 0;
+	sound.play();
 }
 
 function animate(drumItemId) {
@@ -27,24 +28,27 @@ class DrumpMachine extends React.Component {
 	};
 
 	listen = () => {
-		const data = this.state.drumButtons[0];
-		const keyCodes = data.map(item => item.keyCode);
+		const keyCodes = this.state.drumButtons[0].map(item => item.keyCode);
 		window.addEventListener('keyup', event => {
 			if (!this.props.power) return;
 			if (keyCodes.includes(event.keyCode)) {
-				const videoId = data.filter(item => item.keyCode === event.keyCode)[0].id;
+				const videoId = this.state.drumButtons[this.props.soundTrack ? 0 : 1].filter(
+					item => item.keyCode === event.keyCode
+				)[0].id;
+
 				animate(event.keyCode);
 				playSound(videoId);
 			}
 		});
 	};
+
 	componentDidMount() {
 		this.setState({ power: this.props.power });
-		this.listen(this.state.drumButtons[0]);
+		this.listen(this.state.drumButtons);
 	}
 
 	render() {
-		const drumButtons = this.state.drumButtons[0];
+		const drumButtons = this.state.drumButtons[this.props.soundTrack ? 0 : 1];
 
 		return (
 			<div className="drum-machine">
