@@ -16,11 +16,13 @@ function animate(drumItemId) {
 		item.classList.remove('active');
 	}, 200);
 }
+
 class DrumpMachine extends React.Component {
 	handleClick = item => {
 		if (!this.props.power) return;
 		animate(item.keyCode);
 		playSound(item.id);
+		this.props.onClick(item.id);
 	};
 
 	listen = () => {

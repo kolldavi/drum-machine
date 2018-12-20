@@ -13,7 +13,7 @@ class App extends Component {
 		power: true,
 		soundTrack: false,
 		data: getData(),
-		LastClickedButtonView: 'heater'
+		LastClickedButton: 'piano'
 	};
 	render() {
 		const borderRadiusStyle = { borderRadius: 5, fontSize: '2.5em' };
@@ -22,7 +22,16 @@ class App extends Component {
 		return (
 			<div className="inner-container" id="drum-machine">
 				<Logo />
-				<DrumpMachine power={power} soundTrack={soundTrack} drumButtons={this.state.data[soundTrack ? 0 : 1]} />
+				<DrumpMachine
+					power={power}
+					soundTrack={soundTrack}
+					drumButtons={this.state.data[soundTrack ? 0 : 1]}
+					onClick={d => {
+						this.setState({
+							LastClickedButton: d
+						});
+					}}
+				/>
 				<div className="power">
 					<h5 className="power-header">Power</h5>
 					<ToggleButton
@@ -38,7 +47,7 @@ class App extends Component {
 					/>
 				</div>
 				<div className="LastClickedButtonView">
-					<LastClickedButtonView info={this.state.LastClickedButtonView} />
+					<LastClickedButtonView info={this.state.LastClickedButton} />
 				</div>
 				<div className="toggle-song">
 					<h5 className="toggl-song-header">Change Beat</h5>
@@ -57,8 +66,10 @@ class App extends Component {
 						thumbStyle={borderRadiusStyle}
 						trackStyle={borderRadiusStyle}
 						onToggle={() => {
+							const LastClickedButton = this.state.soundTrack ? 'piano' : 'heater';
 							this.setState({
-								soundTrack: !this.state.soundTrack
+								soundTrack: !this.state.soundTrack,
+								LastClickedButton
 							});
 						}}
 					/>
