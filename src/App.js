@@ -3,14 +3,17 @@ import Logo from './components/Logo.js';
 import DrumpMachine from './components/DrumpMachine';
 import ToggleButton from 'react-toggle-button';
 import LableText from './components/LableText';
+import LastClickedButtonView from './components/LastClickedButtonView';
 import { getData } from './utils/api';
+
 import './App.css';
 
 class App extends Component {
 	state = {
 		power: true,
 		soundTrack: false,
-		data: getData()
+		data: getData(),
+		LastClickedButtonView: 'heater'
 	};
 	render() {
 		const borderRadiusStyle = { borderRadius: 5, fontSize: '2.5em' };
@@ -33,6 +36,9 @@ class App extends Component {
 							});
 						}}
 					/>
+				</div>
+				<div className="LastClickedButtonView">
+					<LastClickedButtonView info={this.state.LastClickedButtonView} />
 				</div>
 				<div className="toggle-song">
 					<h5 className="toggl-song-header">Change Beat</h5>

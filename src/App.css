@@ -46,10 +46,19 @@ img {
 	grid-template-areas: ". . . logo"
 		"drummachine drummachine drummachine  power"
 		"drummachine drummachine drummachine  volume"
-		"drummachine drummachine drummachine  volume"
-		"drummachine drummachine drummachine  volume"
+		"drummachine drummachine drummachine  LastClickedButtonView"
+		"drummachine drummachine drummachine  LastClickedButtonView"
 		"drummachine drummachine drummachine  toggle-song";
 
+}
+
+.LastClickedButtonView {
+	grid-area: LastClickedButtonView;
+	background-color: gray;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .drum-machine {
