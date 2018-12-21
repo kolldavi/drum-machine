@@ -42,14 +42,18 @@ img {
 	display: grid;
 	grid-gap: 7px;
 	grid-template-columns: repeat(4, 1fr);
-	border: 1px solid red;
-	grid-template-areas: ". . . logo"
-		"drummachine drummachine drummachine  power"
-		"drummachine drummachine drummachine  volume"
-		"drummachine drummachine drummachine  LastClickedButtonView"
-		"drummachine drummachine drummachine  LastClickedButtonView"
-		"drummachine drummachine drummachine  toggle-song";
 
+	padding: 10px;
+	box-shadow: 15px 15px 10px 10px #484b42;
+	border-radius: 5px;
+	background-color: rgb(223, 239, 255);
+	grid-template-areas:
+		'. . . logo'
+		'drummachine drummachine drummachine  power'
+		'drummachine drummachine drummachine  volume'
+		'drummachine drummachine drummachine  volume'
+		'drummachine drummachine drummachine  LastClickedButtonView'
+		'drummachine drummachine drummachine  toggle-song';
 }
 
 .LastClickedButtonView {
@@ -74,7 +78,6 @@ img {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-
 }
 
 .power-header {
@@ -87,13 +90,15 @@ img {
 
 .drum-item {
 	background-color: rgb(180, 175, 175);
-	box-shadow: 3px 2px 1px 1px rgb(65, 64, 64);
-	border-radius: 2px;
+	box-shadow: 3px 2px 1px 2px rgb(65, 64, 64);
+	border-radius: 10px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
-
+.drum-item:hover {
+	cursor: pointer;
+}
 .power {
 	grid-area: power;
 	display: flex;
@@ -107,12 +112,11 @@ img {
 	display: flex;
 	justify-content: flex-end;
 	font-size: 1.2em;
-
 }
 
 .active {
-	transition: all .1s ease-in-out;
+	transition: all 0.1s ease-in-out;
 	background-color: orange !important;
-	transform: scale(1.07);
-
+	transform: translateX(2px) translateY(2px);
+	box-shadow: 2px 1px 1px 1px rgb(65, 64, 64);
 }
