@@ -5,7 +5,7 @@ import ToggleButton from 'react-toggle-button';
 import LableText from './components/LableText';
 import LastClickedButtonView from './components/LastClickedButtonView';
 import { getData } from './utils/api';
-
+import Toggle from './components/Toggle';
 import './App.css';
 
 class App extends Component {
@@ -34,12 +34,11 @@ class App extends Component {
 				/>
 				<div className="power">
 					<h5 className="power-header">Power</h5>
-					<ToggleButton
-						style={{ gridArea: 'power' }}
-						value={this.state.power}
-						thumbStyle={borderRadiusStyle}
-						trackStyle={borderRadiusStyle}
-						onToggle={() => {
+					<Toggle
+						enabled={this.state.power}
+						data={this.state.power ? 'on' : 'off'}
+						toggleSwitch={() => {
+							console.log('toggle');
 							this.setState({
 								power: !this.state.power
 							});
