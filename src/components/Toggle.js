@@ -1,7 +1,11 @@
 import React from 'react';
-
+import './toggle.css';
 const Toggle = ({ toggleSwitch, data, enabled }) => {
-	return <div onClick={toggleSwitch}>{data}</div>;
+	return (
+		<div class="toggle" onClick={toggleSwitch}>
+			{data}
+		</div>
+	);
 };
 
 export default Toggle;
