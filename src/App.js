@@ -38,7 +38,6 @@ class App extends Component {
 						enabled={this.state.power}
 						data={this.state.power ? 'on' : 'off'}
 						toggleSwitch={() => {
-							console.log('toggle');
 							this.setState({
 								power: !this.state.power
 							});
@@ -50,21 +49,11 @@ class App extends Component {
 				</div>
 				<div className="toggle-song">
 					<h5 className="toggl-song-header">Change Beat</h5>
-					<ToggleButton
-						inactiveLabel={<LableText textLable="1" />}
-						activeLabel={<LableText textLable="2" />}
-						value={this.state.soundTrack}
-						colors={{
-							active: {
-								base: 'rgb(42, 69, 140))'
-							},
-							inactive: {
-								base: 'rgb(244, 155, 66)'
-							}
-						}}
-						thumbStyle={borderRadiusStyle}
-						trackStyle={borderRadiusStyle}
-						onToggle={() => {
+
+					<Toggle
+						enabled={this.state.soundTrack}
+						data={this.state.soundTrack ? '1' : '2'}
+						toggleSwitch={() => {
 							const LastClickedButton = this.state.soundTrack ? 'piano' : 'heater';
 							this.setState({
 								soundTrack: !this.state.soundTrack,

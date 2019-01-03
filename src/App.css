@@ -78,6 +78,7 @@ img {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+
 }
 
 .power-header {
@@ -96,9 +97,11 @@ img {
 	align-items: center;
 	justify-content: center;
 }
+
 .drum-item:hover {
 	cursor: pointer;
 }
+
 .power {
 	grid-area: power;
 	display: flex;
@@ -119,4 +122,14 @@ img {
 	background-color: orange !important;
 	transform: translateX(2px) translateY(2px);
 	box-shadow: 2px 1px 1px 1px rgb(65, 64, 64);
+}
+
+.toggle {
+	width: 75px;
+	height: 30px;
+
+}
+
+.toggle>div {
+	transition: all .5s ease;
 }
