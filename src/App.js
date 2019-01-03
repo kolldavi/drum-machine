@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import Logo from './components/Logo.js';
 import DrumpMachine from './components/DrumpMachine';
-import ToggleButton from 'react-toggle-button';
-import LableText from './components/LableText';
 import LastClickedButtonView from './components/LastClickedButtonView';
 import { getData } from './utils/api';
 import Toggle from './components/Toggle';
@@ -16,7 +14,6 @@ class App extends Component {
 		LastClickedButton: 'piano'
 	};
 	render() {
-		const borderRadiusStyle = { borderRadius: 5, fontSize: '2.5em' };
 		const { power, soundTrack } = this.state;
 
 		return (
